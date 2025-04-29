@@ -39,7 +39,7 @@ function App() {
       );
 
       const data = await formRes.json();
-      console.log(data);
+      // console.log(data);
       setForm(data.form);
       // catch
     } catch (err: any) {
