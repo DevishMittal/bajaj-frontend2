@@ -31,7 +31,11 @@ function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ rollNumber, name }),
       });
-      if (!res.ok) throw new Error("Registration failed");
+      if (!res.ok) {
+        const formRes = await fetch(
+          `${API_BASE}/get-form?rollNumber=${rollNumber}`
+        );
+      }
       setIsLoggedIn(true);
       // Fetch form after login, dynamically render karna hai
       const formRes = await fetch(
